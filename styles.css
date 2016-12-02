@@ -1,0 +1,15 @@
+.header {
+	background-color: lightblue;
+}
+
+.main {
+	height: 760px;
+	background-color: lightyellow;
+}
+
+.footer {
+	height: 80px;
+	background-color: lightgrey;
+}
+
+
