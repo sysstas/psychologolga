@@ -1,15 +1,49 @@
-.header {
-	background-color: lightblue;
+
+///////////
+header {	
+  position: relative;
+  background-color: transparent !important;
+
+}
+header .img{
+	position: absolute;
+    left:0; top:0;
+    background-size: cover;
+    min-height: 200px;
+    width: 100%;
+    opacity: 0.45;
+    background-image: url("images/landing-stage.jpg");
+    z-index: -1;
+  height: 400px;
 }
 
-.main {
+header .container {
+    background-color: transparent;
+  height: 100vh;
+}
+section .container .row {
+    padding: 1.5em;
+}
+.jumbotron {
+     background-color: transparent;
+     height: 400px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+ }
+
+
+.main {	
 	height: 760px;
-	background-color: lightyellow;
+	background-color: lightgrey;
 }
 
 .footer {
 	height: 80px;
-	background-color: lightgrey;
+	background-color: grey;
+}
+
+.align-center{
+	text-align: center;
 }
 
 

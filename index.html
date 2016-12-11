@@ -8,40 +8,74 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<!-- Angular Route -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
 </head>
-<body>
-
+<body ng-app="Psycho">
 <header class="jumbotron header">
-	<div class="container-fluid ">
-		<dir class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
+	<div class="img"></div>	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+				<img src="images/olga.jpg" class="img-rounded img-responsive" width="200">			
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">		
+				<h1 class="align-center">Психолог</h1>
+				<h1 class="align-center">Ольга Сысоева</h1>
+			</div>	
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">		
+				<h2 class="align-center">Телефон</h2>
+				<h2 class="align-center">+38 066 397 16 92</h2>
 			</div>			
-		</dir>	
-	</div>	
+		</div>	
+	</div>
+	
 </header>
 <!-- Angular app -->
 <!-- Angular Router -->
-<main ng-app>
-	<div class="container main">
-		<dir class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
-			</div>			
-		</dir>	
-	</div>	
+<nav class="navbar navbar-default">
+  <div class="container">    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#/">Главная</a></li>
+      <li><a href="#/about">Обо мне</a></li>
+      <li><a href="#/prices">Цены</a></li>
+      <li><a href="#/order">Консультация</a></li>
+    </ul>
+  </div>
+</nav>
+<main  class="container main">
+	<dir class="row" ng-view>
+					
+	</dir>
 </main>
-
-<footer>
-	<div class="container-fluid footer">
-		<dir class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
-			</div>			
-		</dir>	
-	</div>	
+<!-- End Angular App -->
+<footer class="container-fluid footer">	
+	<dir class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			
+		</div>			
+	</dir>	
 </footer>
-
+<script type="text/javascript">
+	var app=angular.module("Psycho",["ngRoute"]);
+	app.config(function($routeProvider){
+		$routeProvider
+		.when("/", {
+			templateUrl : "main.htm"
+		})
+		.when("/about", {
+			templateUrl : "aboutme.htm"
+		})
+		.when("/prices", {
+			templateUrl : "prices.htm"
+		})
+		.when("/order", {
+			templateUrl : "order.htm"
+		});
+	});
+</script>
 </body>
 </html>
